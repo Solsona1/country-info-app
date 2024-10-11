@@ -1,0 +1,18 @@
+@import 'src/responsive.scss';
+
+.populationChart {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    
+    .title {
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .chartContainer {
+        flex: 1;
+    }
+}

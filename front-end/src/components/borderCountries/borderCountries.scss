@@ -1,0 +1,29 @@
+@import 'src/responsive.scss';
+
+.borderCountries {
+    height: 100%;
+    width: 100%;
+
+    table {
+        height: 100%;
+        width: 100%;
+        font-size: 20px;
+
+        .tableHeader {
+            text-align: center;
+        }
+
+        tbody {
+            tr {
+                td {
+                    .countryName {
+                        &:hover {
+                            font-weight: 300;
+                            color: rgb(68, 68, 134);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

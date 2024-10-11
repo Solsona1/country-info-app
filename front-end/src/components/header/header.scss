@@ -1,0 +1,22 @@
+@import 'src/responsive.scss';
+
+nav {
+    height: 100px;
+    display: flex;
+    align-items: center;
+
+    a {
+        transition: all 0.4s ease;
+        cursor: pointer;
+
+        &:hover {
+            scale: 1.05;
+        }
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+}
