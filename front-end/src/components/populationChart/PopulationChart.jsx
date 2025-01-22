@@ -11,7 +11,7 @@ function PopulationChart({ stats }) {
       aux.push([population.year, population.value])
     ));
     setData(aux);
-  }, [])
+  }, [stats]);
 
   return(
     <div className="populationChart">
@@ -19,15 +19,22 @@ function PopulationChart({ stats }) {
         Population over time
       </div>
       <div className="chartContainer">
-        <Chart
-          chartType="AreaChart" 
-          width="100%" 
-          height="100%" 
-          data={data}
-          options={{
-            isStacked: true
-          }}
-        />
+        { data.length>1 ? (
+          <Chart
+            chartType="AreaChart" 
+            width="100%" 
+            height="100%" 
+            data={data}
+            options={{
+              isStacked: true
+            }}
+          />
+          ): (
+            <div className="noPopulation">
+              This country has no population data
+            </div>
+          )
+        }
       </div>
     </div>
   )

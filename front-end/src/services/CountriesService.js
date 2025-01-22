@@ -1,19 +1,27 @@
-const apiUrl = 'http://localhost:3000/countries';
+const apiUrl = import.meta.env.VITE_BASE_API_URL;
 
 export async function getAvailableCountries() {
-  const response = await fetch(apiUrl, {
-    method: 'GET',
-    headers: new Headers({ 'Content-type': 'application/json'}),
-    mode: 'cors'
-  });
-  return await response.json();
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'GET',
+      headers: new Headers({ 'Content-type': 'application/json'}),
+      mode: 'cors'
+    });
+    return await response.json();
+  } catch (error) {
+    throw new Error(error);
+  }
 }
 
 export async function getCountryInfo(code) {
-  const response = await fetch(`${apiUrl}/${code}`, {
-    method: 'GET',
-    headers: new Headers({ 'Content-type': 'application/json'}),
-    mode: 'cors'
-  });
-  return await response.json();
+  try {
+    const response = await fetch(`${apiUrl}/${code}`, {
+      method: 'GET',
+      headers: new Headers({ 'Content-type': 'application/json'}),
+      mode: 'cors'
+    });
+    return await response.json();
+  } catch (error) {
+    throw new Error(error);
+  }
 }
